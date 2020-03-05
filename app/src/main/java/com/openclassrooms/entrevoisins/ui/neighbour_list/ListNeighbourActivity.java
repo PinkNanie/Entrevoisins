@@ -45,4 +45,5 @@ public class ListNeighbourActivity extends AppCompatActivity {
         AddNeighbourActivity.navigate(this);
     }
 
+            (R.id.fragment_neighbour)
 }

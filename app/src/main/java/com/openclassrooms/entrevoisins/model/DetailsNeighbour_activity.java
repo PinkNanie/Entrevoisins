@@ -8,33 +8,46 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.service.DummyNeighbourGenerator;
+
 
 public class DetailsNeighbour_activity extends AppCompatActivity {
 
-    ImageView mProfilePicture;
-    Button mReturnBtn;
-    TextView mFirstname;
-    Button mFavoriteBtn;
-    TextView mInfos;
-    TextView mBiography;
+   Neighbour mNeighbour;
+   private ImageView mProfilePicture;
+   private Button mReturnBtn;
+   private TextView mFirstname;
+   private Button mFavoriteBtn;
+   private TextView mInfos;
+   private TextView mBiography;
 
 
-    public ImageView getmProfilePicture() {
-        return mProfilePicture ;
-    }
 
-    public TextView getmFirstname() {
+    private ImageView getmProfilePicture(String) {
+
+        mNeighbour.getAvatarUrl();
+
+        return mProfilePicture ;}
+
+    public TextView getmFirstname (String) {
+
+       mNeighbour.getName();
+
         return mFirstname ;
     }
 
-    public TextView getmInfos() {
+    public TextView getmInfos (String, String) {
+
+       mNeighbour.getAddress(), mNeighbour.getPhoneNumber();
+
         return mInfos;
     }
 
-    public TextView getmBiography() {
+    public TextView mBiography(String) {
 
-        return mBiography;
-    }
+        mNeighbour.getAboutMe();
+
+        return mBiography;}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +61,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity {
         mInfos = (TextView) findViewById(R.id.infos);
         mBiography = (TextView) findViewById(R.id.biography);
 
-        
+
     }
 
 
