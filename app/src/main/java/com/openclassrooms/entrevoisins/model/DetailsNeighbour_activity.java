@@ -4,7 +4,7 @@ package com.openclassrooms.entrevoisins.model;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,11 +15,13 @@ import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 
 public class DetailsNeighbour_activity extends AppCompatActivity {
 
+    ListNeighbourActivity mListneighbouractivity;
+    FavListFragment mFavListFragment
    Neighbour mNeighbour;
    private ImageView mProfilePicture;
-   private Button mReturnBtn;
+   private ImageButton mReturnBtn;
    private TextView mFirstname;
-   private Button mFavoriteBtn;
+   private ImageButton mFavoriteBtn;
    private TextView mInfos;
    private TextView mBiography;
 
@@ -58,9 +60,9 @@ public class DetailsNeighbour_activity extends AppCompatActivity {
         setContentView(R.layout.activity_details_neighbour);
 
         mProfilePicture = (ImageView) findViewById(R.id.profile_picture);
-        mReturnBtn = (Button) findViewById(R.id.return_btn);
+        mReturnBtn = (ImageButton) findViewById(R.id.return_btn);
         mFirstname = (TextView) findViewById(R.id.firstname);
-        mFavoriteBtn = (Button) findViewById(R.id.favorite_btn);
+        mFavoriteBtn = (ImageButton) findViewById(R.id.favorite_btn);
         mInfos = (TextView) findViewById(R.id.infos);
         mBiography = (TextView) findViewById(R.id.biography);
 
@@ -70,7 +72,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity {
         mFavoriteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Neighbour = FavListFragment;
+                Neighbour.add.FavListFragment;
             }
         });
 
@@ -78,7 +80,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity {
         mReturnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                return ListNeighbourActivity;
+                return mListneighbouractivity;
             }
         });
     }
