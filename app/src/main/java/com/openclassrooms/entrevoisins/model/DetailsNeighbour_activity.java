@@ -1,14 +1,13 @@
 package com.openclassrooms.entrevoisins.model;
 
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.openclassrooms.entrevoisins.R;
-import com.openclassrooms.entrevoisins.service.DummyNeighbourGenerator;
 
 
 public class DetailsNeighbour_activity extends AppCompatActivity {
