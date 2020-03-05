@@ -3,11 +3,14 @@ package com.openclassrooms.entrevoisins.model;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.ui.neighbour_list.FavListFragment;
+import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 
 
 public class DetailsNeighbour_activity extends AppCompatActivity {
@@ -35,7 +38,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity {
         return mFirstname ;
     }
 
-    public TextView getmInfos (String, String) {
+    public TextView getmInfos (String,String) {
 
        mNeighbour.getAddress(), mNeighbour.getPhoneNumber();
 
@@ -47,6 +50,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity {
         mNeighbour.getAboutMe();
 
         return mBiography;}
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +64,22 @@ public class DetailsNeighbour_activity extends AppCompatActivity {
         mInfos = (TextView) findViewById(R.id.infos);
         mBiography = (TextView) findViewById(R.id.biography);
 
+        mReturnBtn.setEnabled(true);
+        mFavoriteBtn.setEnabled(true);
 
+        mFavoriteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Neighbour = FavListFragment;
+            }
+        });
+
+
+        mReturnBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                return ListNeighbourActivity;
+            }
+        });
     }
-
-
 }
