@@ -42,7 +42,8 @@ public class DetailsNeighbour_activity extends AppCompatActivity {
 
     public TextView getmInfos (String,String) {
 
-       mNeighbour.getAddress(), mNeighbour.getPhoneNumber();
+       mNeighbour.getAddress(),
+       mNeighbour.getPhoneNumber();
 
         return mInfos;
     }
