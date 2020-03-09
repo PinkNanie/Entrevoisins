@@ -36,14 +36,7 @@ public class FavListFragment extends ListFragment {
 
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FavListFragment.
-     */
+
     // TODO: Rename and change types and number of parameters
     public static FavListFragment newInstance() {
         FavListFragment fragment = new FavListFragment();
@@ -57,6 +50,9 @@ public class FavListFragment extends ListFragment {
             mFavNeighbour = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override

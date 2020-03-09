@@ -11,20 +11,31 @@ import android.widget.TextView;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.FavListFragment;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
+import butterknife.BindView;
 
+public class DetailsNeighbour_activity extends AppCompatActivity implements View.OnClickListener {
 
-public class DetailsNeighbour_activity extends AppCompatActivity {
-
+    private OnButtonClickedListener mCallback;
     ListNeighbourActivity mListneighbouractivity;
-    FavListFragment mFavListFragment
-   Neighbour mNeighbour;
-   private ImageView mProfilePicture;
-   private ImageButton mReturnBtn;
-   private TextView mFirstname;
-   private ImageButton mFavoriteBtn;
-   private TextView mInfos;
-   private TextView mBiography;
+    FavListFragment mFavListFragment;
+    Neighbour mNeighbour;
 
+    @BindView(R.id.profile_picture)
+    ImageView mProfilePicture;
+    @BindView(R.id.return_btn)
+    ImageButton mReturnBtn;
+    @BindView(R.id.firstname)
+    TextView mFirstname;
+    @BindView(R.id.favorite_btn)
+    ImageButton mFavoriteBtn;
+    @BindView(R.id.infos)
+    TextView mInfos;
+    @BindView(R.id.biography)
+    TextView mBiography;
+
+    public interface OnButtonClickedListener {
+        public void onButtonClicked(View view);
+    }
 
 
     private ImageView getmProfilePicture(String) {
