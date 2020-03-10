@@ -91,9 +91,9 @@ public class Neighbour {
         this.aboutMe = aboutMe;
     }
 
-    private Neighbour isFavorite = NeighbourApiService.setNeighbourFavorite(boolean isFavorite)
+    public Neighbour isFavorite = new Neighbour();
 
-    public Neighbour getIsFavorite() { return isFavorite; }
+
 
     @Override
     public boolean equals(Object o) {

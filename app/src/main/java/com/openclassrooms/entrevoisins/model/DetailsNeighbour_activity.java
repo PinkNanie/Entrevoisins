@@ -16,7 +16,7 @@ import butterknife.BindView;
 public class DetailsNeighbour_activity extends AppCompatActivity implements View.OnClickListener {
 
     private OnButtonClickedListener mCallback;
-    ListNeighbourActivity mListneighbouractivity;
+    ListNeighbourActivity mListNeighbouractivity;
     FavListFragment mFavListFragment;
     Neighbour mNeighbour;
 
@@ -90,7 +90,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
         mReturnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                return mListneighbouractivity;
+                return mListNeighbouractivity;
             }
         });
     }

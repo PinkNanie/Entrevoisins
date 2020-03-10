@@ -12,23 +12,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link FavListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FavListFragment extends ListFragment {
+public class FavListFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private isFavorite  mFavNeighbour;
+    private NeighbourApiService mApiService;
 
-    // TODO: Rename and change types of parameters
-    private String mFavNeighbour;
-    private String mParam2;
+
 
     public FavListFragment() {
         // Required empty public constructor
@@ -65,4 +64,15 @@ public class FavListFragment extends ListFragment {
         mRecyclerView.addItemDecoration ( new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         return view;
     }
+
+    private void initlist(){
+        mFavNeighbour = NeighbourApiService.NeighbourFavorite();
+        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavNeighbour));
+    }
+
+    public void onResume(){
+        super.onResume();
+        initlist();
+    }
+
 }
