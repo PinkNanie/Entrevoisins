@@ -32,6 +32,11 @@ public interface NeighbourApiService {
      */
     void createNeighbour(Neighbour neighbour);
 
+    /**
+     * Do a Neighbour.isFavorite
+     * @param isFavorite
+     */
+
      setNeighbourFavorite (boolean isFavorite) {
 
         if (DetailsNeighbour_activity.mFavoriteBtn.setOnClickListener(true);
