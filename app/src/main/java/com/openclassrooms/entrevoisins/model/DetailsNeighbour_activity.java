@@ -83,9 +83,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
 
         mFavoriteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Neighbour.add.FavListFragment;
-            }
+            public void onClick(View v)
         });
 
 

@@ -1,5 +1,7 @@
 package com.openclassrooms.entrevoisins.model;
 
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
+
 import java.util.Objects;
 
 /**
@@ -89,6 +91,10 @@ public class Neighbour {
         this.aboutMe = aboutMe;
     }
 
+    private Neighbour isFavorite = NeighbourApiService.setNeighbourFavorite(boolean isFavorite)
+
+    public Neighbour getIsFavorite() { return isFavorite; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -101,4 +107,6 @@ public class Neighbour {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+
 }
