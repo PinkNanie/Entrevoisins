@@ -45,10 +45,7 @@ public class FavListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mFavNeighbour = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        mApiService.setNeighbourFavorite(boolean isFavorite);
 
 
 
@@ -66,7 +63,7 @@ public class FavListFragment extends Fragment {
     }
 
     private void initlist(){
-        mFavNeighbour = NeighbourApiService.NeighbourFavorite();
+        mFavNeighbour = mApiService.setNeighbourFavorite(boolean isFavorite);
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavNeighbour));
     }
 

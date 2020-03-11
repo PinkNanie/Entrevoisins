@@ -91,7 +91,7 @@ public class Neighbour {
         this.aboutMe = aboutMe;
     }
 
-    public Neighbour isFavorite = new Neighbour();
+    private boolean isFavorite = false;
 
 
 

@@ -37,15 +37,5 @@ public interface NeighbourApiService {
      * @param isFavorite
      */
 
-    static boolean NeighbourFavorite() {
-
-        if (DetailsNeighbour_activity.mFavoriteBtn.setOnClickListener(true){
-
-          Neighbour = new Neighbour.isFavorite)
-        }
-
-        else (false) {
-            Neighbour = Neighbour
-         }
-    }
+    void setNeighbourFavorite (boolean isFavorite);
 }

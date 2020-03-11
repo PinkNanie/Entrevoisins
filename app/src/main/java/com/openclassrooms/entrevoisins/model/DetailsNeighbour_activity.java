@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.FavListFragment;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 import butterknife.BindView;
@@ -33,6 +34,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
     @BindView(R.id.biography)
     TextView mBiography;
 
+    /**
     public interface OnButtonClickedListener {
         public void onButtonClicked(View view);
     }
@@ -64,7 +66,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
         mNeighbour.getAboutMe();
 
         return mBiography;}
-
+    **/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,21 +79,31 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
         mFavoriteBtn = (ImageButton) findViewById(R.id.favorite_btn);
         mInfos = (TextView) findViewById(R.id.infos);
         mBiography = (TextView) findViewById(R.id.biography);
+    }
 
+
+    @Override
+    public void onClick(View v) {
         mReturnBtn.setEnabled(true);
         mFavoriteBtn.setEnabled(true);
 
+
+
+
         mFavoriteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
+            public void onClick(View v){
+                mNeighbour.add(NeighbourApiService.setNeighbourFavorite());
+            }
         });
 
 
         mReturnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                return mListNeighbouractivity;
+                return ListNeighbourActivity;
             }
         });
+
     }
 }
