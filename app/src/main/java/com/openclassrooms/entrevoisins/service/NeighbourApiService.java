@@ -1,9 +1,5 @@
 package com.openclassrooms.entrevoisins.service;
 
-import android.support.v4.app.NotificationCompatSideChannelService;
-import android.view.View;
-
-import com.openclassrooms.entrevoisins.model.DetailsNeighbour_activity;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
 import java.util.List;

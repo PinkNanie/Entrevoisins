@@ -1,6 +1,5 @@
 package com.openclassrooms.entrevoisins.service;
 
-import com.openclassrooms.entrevoisins.model.DetailsNeighbour_activity;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
 import java.util.List;
@@ -40,6 +39,6 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
     @Override
     public void setNeighbourFavorite(boolean isFavorite) {
-        if (DetailsNeighbour_activity)
+
     }
 }

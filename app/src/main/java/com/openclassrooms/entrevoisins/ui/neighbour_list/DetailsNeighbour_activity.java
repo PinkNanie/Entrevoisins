@@ -1,4 +1,4 @@
-package com.openclassrooms.entrevoisins.model;
+package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.FavListFragment;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
@@ -16,7 +17,10 @@ import butterknife.BindView;
 
 public class DetailsNeighbour_activity extends AppCompatActivity implements View.OnClickListener {
 
-    private OnButtonClickedListener mCallback;
+    /**
+     * private OnButtonClickedListener mCallback;
+     */
+
     ListNeighbourActivity mListNeighbouractivity;
     FavListFragment mFavListFragment;
     Neighbour mNeighbour;
@@ -34,51 +38,12 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
     @BindView(R.id.biography)
     TextView mBiography;
 
-    /**
-    public interface OnButtonClickedListener {
-        public void onButtonClicked(View view);
-    }
 
-
-    private ImageView getmProfilePicture(String) {
-
-        mNeighbour.getAvatarUrl();
-
-        return mProfilePicture ;}
-
-    public TextView getmFirstname (String) {
-
-       mNeighbour.getName();
-
-        return mFirstname ;
-    }
-
-    public TextView getmInfos (String,String) {
-
-       mNeighbour.getAddress(),
-       mNeighbour.getPhoneNumber();
-
-        return mInfos;
-    }
-
-    public TextView mBiography(String) {
-
-        mNeighbour.getAboutMe();
-
-        return mBiography;}
-    **/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_neighbour);
-
-        mProfilePicture = (ImageView) findViewById(R.id.profile_picture);
-        mReturnBtn = (ImageButton) findViewById(R.id.return_btn);
-        mFirstname = (TextView) findViewById(R.id.firstname);
-        mFavoriteBtn = (ImageButton) findViewById(R.id.favorite_btn);
-        mInfos = (TextView) findViewById(R.id.infos);
-        mBiography = (TextView) findViewById(R.id.biography);
     }
 
 
@@ -93,7 +58,9 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
         mFavoriteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                mNeighbour.add(NeighbourApiService.setNeighbourFavorite());
+                /**
+                 * au click du mFavoriteBtn ajouter le Neighbour à isFavorite
+                 */
             }
         });
 
@@ -101,7 +68,9 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
         mReturnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                return ListNeighbourActivity;
+                return ; /**
+                        * retourne à la page précédente
+                        */
             }
         });
 

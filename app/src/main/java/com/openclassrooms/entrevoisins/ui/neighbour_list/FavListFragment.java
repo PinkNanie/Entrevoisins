@@ -26,7 +26,9 @@ import java.util.List;
 public class FavListFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-    private isFavorite  mFavNeighbour;
+             /**
+            * appeler la <List> Neighbour </List>
+            */
     private NeighbourApiService mApiService;
 
 
@@ -47,7 +49,9 @@ public class FavListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mApiService.setNeighbourFavorite (boolean isFavorite);
+        /**
+         * à relier avec mApiService
+         */
 
 
     }
@@ -64,9 +68,12 @@ public class FavListFragment extends Fragment {
     }
 
     private void initList(){
-        mFavNeighbour = mApiService.setNeighbourFavorite(boolean isFavorite)
-        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavNeighbour));
-    }
+        /**
+         * 1 _ initialiser cette liste en faisant appel à
+         * mApiService.getNeighbourFavorite.
+         * 2 _ relier la liste au RecyclerView
+         */
+     }
 
     public void onResume(){
         super.onResume();
