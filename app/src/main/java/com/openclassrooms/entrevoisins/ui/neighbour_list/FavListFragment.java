@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.di.DI;
+import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 import org.greenrobot.eventbus.EventBus;
@@ -26,10 +28,9 @@ import java.util.List;
 public class FavListFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-             /**
-            * appeler la <List> Neighbour </List>
-            */
+    private List <Neighbour> mFavList;
     private NeighbourApiService mApiService;
+
 
 
 
@@ -49,9 +50,7 @@ public class FavListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /**
-         * à relier avec mApiService
-         */
+        mApiService = DI.getNeighbourApiService();
 
 
     }
@@ -68,6 +67,8 @@ public class FavListFragment extends Fragment {
     }
 
     private void initList(){
+
+
         /**
          * 1 _ initialiser cette liste en faisant appel à
          * mApiService.getNeighbourFavorite.

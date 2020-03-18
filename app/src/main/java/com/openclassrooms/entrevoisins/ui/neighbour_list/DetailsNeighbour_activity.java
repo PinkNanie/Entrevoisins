@@ -14,6 +14,7 @@ import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.FavListFragment;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class DetailsNeighbour_activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,6 +25,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
     ListNeighbourActivity mListNeighbouractivity;
     FavListFragment mFavListFragment;
     Neighbour mNeighbour;
+    NeighbourApiService mApiService;
 
     @BindView(R.id.profile_picture)
     ImageView mProfilePicture;
@@ -47,6 +49,12 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
     }
 
 
+     /** @OnClick
+       * (R.id.favorite_btn)
+       * void setmFavListFragment;
+       */
+
+
     @Override
     public void onClick(View v) {
         mReturnBtn.setEnabled(true);
@@ -58,9 +66,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
         mFavoriteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                /**
-                 * au click du mFavoriteBtn ajouter le Neighbour à isFavorite
-                 */
+
             }
         });
 

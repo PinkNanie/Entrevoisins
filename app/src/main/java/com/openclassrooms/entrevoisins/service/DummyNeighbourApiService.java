@@ -30,6 +30,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
     /**
      * {@inheritDoc}
+     *
      * @param neighbour
      */
     @Override
@@ -38,7 +39,10 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
     }
 
     @Override
-    public void setNeighbourFavorite(boolean isFavorite) {
-
+    public List<Neighbour> setNeighbourFavorite(Neighbour neighbour, boolean isFavorite) {
+        return null;
     }
+
 }
+
+

@@ -51,6 +51,17 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
             }
         });
+
+        /**
+        holder.mFavorite_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View v){
+                EventBus.getDefault().post(new  );
+            }
+        });
+         * associer mApiService.setFavorite au click du bouton mFavoriteBtn
+         * @param view
+         */
     }
 
     @Override
@@ -65,6 +76,10 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         public TextView mNeighbourName;
         @BindView(R.id.item_list_delete_button)
         public ImageButton mDeleteButton;
+        @BindView(R.id.favorite_btn)
+        public ImageButton mFavorite_btn;
+
+
 
         public ViewHolder(View view) {
             super(view);

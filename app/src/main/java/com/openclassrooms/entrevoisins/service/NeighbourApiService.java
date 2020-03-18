@@ -33,5 +33,5 @@ public interface NeighbourApiService {
      * @param isFavorite
      */
 
-    void setNeighbourFavorite (boolean isFavorite);
+    List<Neighbour> setNeighbourFavorite(Neighbour neighbour, boolean isFavorite);
 }
