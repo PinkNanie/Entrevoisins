@@ -29,16 +29,16 @@ public interface NeighbourApiService {
     void createNeighbour(Neighbour neighbour);
 
     /**
-     * Do a Neighbour.isFavorite
-     * @param isFavorite
+     * get all Favorites
+     * @return {@link List}
      */
 
-    List<Neighbour> setNeighbourFavorite(Neighbour neighbour, boolean isFavorite){
-        if mFavorite_btn.setOnclickListener(){
-            Neighbour = isFavorite;
-        }
-        else {
-            Neighbour = Neighbour;
-        }
-    };
+    List<Neighbour> getNeighboursFavorite();
+
+    /**
+     * Set Neighbour as Favorite
+     * if he is and vice-versa.
+     * @param neighbour
+     */
+    void reverseNeighbour(Neighbour neighbour);
 }
