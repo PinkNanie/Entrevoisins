@@ -28,7 +28,7 @@ public class Neighbour {
     private String aboutMe;
 
     /** Favorites */
-    private String isFavorite;
+    private boolean isFavorite;
 
     /**
      * Constructor
@@ -94,7 +94,10 @@ public class Neighbour {
         this.aboutMe = aboutMe;
     }
 
+    public void setFavorite (boolean isFavorite){
+        this.isFavorite = isFavorite;    }
 
+    public boolean isFavorite() { return isFavorite;}
 
 
 

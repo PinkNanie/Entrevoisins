@@ -33,5 +33,12 @@ public interface NeighbourApiService {
      * @param isFavorite
      */
 
-    List<Neighbour> setNeighbourFavorite(Neighbour neighbour, boolean isFavorite);
+    List<Neighbour> setNeighbourFavorite(Neighbour neighbour, boolean isFavorite){
+        if mFavorite_btn.setOnclickListener(){
+            Neighbour = isFavorite;
+        }
+        else {
+            Neighbour = Neighbour;
+        }
+    };
 }
