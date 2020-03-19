@@ -99,6 +99,9 @@ public class Neighbour {
 
     public boolean isFavorite() { return isFavorite;}
 
+    public void reverseFavorite(){
+        setFavorite(!isFavorite());     }
+
 
 
     @Override
