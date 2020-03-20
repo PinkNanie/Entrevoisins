@@ -43,7 +43,6 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         neighbours.add(neighbour);
     }
 
-
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public List<Neighbour> getNeighboursFavorite() {
@@ -61,8 +60,10 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
     @Override
     public void reverseNeighbour(Neighbour neighbour) {
 
-        if (neighbour.isFavorite()) neighbour.reverseFavorite();
+            neighbour.reverseFavorite();
         }
+
+
 }
 
 
