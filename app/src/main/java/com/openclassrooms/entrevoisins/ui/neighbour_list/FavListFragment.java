@@ -68,12 +68,9 @@ public class FavListFragment extends Fragment {
 
     private void initList(){
 
+        mFavList = mApiService.getNeighboursFavorite();
+        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavList));
 
-        /**
-         * 1 _ initialiser cette liste en faisant appel à
-         * mApiService.getNeighbourFavorite.
-         * 2 _ relier la liste au RecyclerView
-         */
      }
 
     public void onResume(){
