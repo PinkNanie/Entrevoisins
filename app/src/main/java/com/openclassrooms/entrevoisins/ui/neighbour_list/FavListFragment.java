@@ -27,6 +27,7 @@ import java.util.List;
  */
 public class FavListFragment extends Fragment {
 
+
     private RecyclerView mRecyclerView;
     private List <Neighbour> mFavList;
     private NeighbourApiService mApiService;

@@ -1,9 +1,12 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,16 +14,14 @@ import android.widget.TextView;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
-import com.openclassrooms.entrevoisins.ui.neighbour_list.FavListFragment;
-import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
+
 import butterknife.BindView;
-import butterknife.OnClick;
 
 public class DetailsNeighbour_activity extends AppCompatActivity implements View.OnClickListener {
 
-    /**
-     * private OnButtonClickedListener mCallback;
-     */
+
+     private OnButtonClickedListener mCallback;
+
 
     ListNeighbourActivity mListNeighbouractivity;
     FavListFragment mFavListFragment;
@@ -40,33 +41,40 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
     @BindView(R.id.biography)
     TextView mBiography;
 
+    public interface onButtonClickedListener{
+         void onButtonClicked (View view);
+    }
 
+    protected View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details_neighbour);
+        View result = inflater.inflate(R.layout.activity_details_neighbour, container, false);
+
+        result.findViewById(R.id.detailsNeighbour_btn).setOnClickListener(this);
+
+        return result;
     }
 
 
-     /** @OnClick
-       * (R.id.favorite_btn)
-       * void setmFavListFragment;
-       */
+    @Override
+    public  void onAttach(Context context){
+        super.onAttach(context);
 
+        this.createCallbacktoparentActivity();
+    }
 
     @Override
     public void onClick(View v) {
         mReturnBtn.setEnabled(true);
         mFavoriteBtn.setEnabled(true);
 
+        mCallback.onButtonClicked(v);
 
 
 
         mFavoriteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-
+                mApiService.reverseNeighbour(mNeighbour);
             }
         });
 
@@ -80,5 +88,13 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
             }
         });
 
+    }
+
+    private void createCallbacktoparentActivity(){
+        try {
+            mCallback = (onButtonClickedListener) getCallingActivity();
+        } catch (ClassCastException e){
+            throw new ClassCastException(e.toString()+"must implement OnButtonClickedListener");
+        }
     }
 }
