@@ -1,6 +1,7 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +44,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+
         Neighbour neighbour = mNeighbours.get(position);
         holder.mNeighbourName.setText(neighbour.getName());
         Glide.with(holder.mNeighbourAvatar.getContext())
@@ -58,17 +60,17 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             }
         });
 
-        /**
-         *
+
           holder.mDetailsNeighbour_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Glide.with(holder.mDetailsNeighbour_btn.getContext())
-                        .load()
+                Intent toDetail = new Intent(holder.mNeighbourName.getContext(), DetailsNeighbour_activity.class);
+                toDetail.putExtra("neighbour",(Parcelable)neighbour);
+                v.getContext().startActivity(toDetail);
             }
         });
 
-         */
+
 
     }
 

@@ -20,7 +20,7 @@ import butterknife.BindView;
 public class DetailsNeighbour_activity extends AppCompatActivity implements View.OnClickListener {
 
 
-     private OnButtonClickedListener mCallback;
+    /** private OnButtonClickedListener mCallback;*/
 
 
     ListNeighbourActivity mListNeighbouractivity;
@@ -41,7 +41,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
     @BindView(R.id.biography)
     TextView mBiography;
 
-    public interface onButtonClickedListener{
+    /**public interface onButtonClickedListener{
          void onButtonClicked (View view);
     }
 
@@ -52,22 +52,22 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
         result.findViewById(R.id.detailsNeighbour_btn).setOnClickListener(this);
 
         return result;
-    }
+    }*/
 
-
+    /**
     @Override
     public  void onAttach(Context context){
         super.onAttach(context);
 
         this.createCallbacktoparentActivity();
-    }
+    }*/
 
     @Override
     public void onClick(View v) {
         mReturnBtn.setEnabled(true);
         mFavoriteBtn.setEnabled(true);
 
-        mCallback.onButtonClicked(v);
+       /** mCallback.onButtonClicked(v); */
 
 
 
@@ -90,11 +90,11 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
 
     }
 
-    private void createCallbacktoparentActivity(){
+    /**private void createCallbacktoparentActivity(){
         try {
             mCallback = (onButtonClickedListener) getCallingActivity();
         } catch (ClassCastException e){
             throw new ClassCastException(e.toString()+"must implement OnButtonClickedListener");
         }
-    }
+    }*/
 }
