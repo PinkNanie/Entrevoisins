@@ -2,6 +2,7 @@ package com.openclassrooms.entrevoisins.ui;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
+import com.openclassrooms.entrevoisins.ui.neighbour_list.MyNeighbourRecyclerViewAdapter;
 
 
 import butterknife.BindView;
@@ -73,7 +75,10 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
             @Override
             public void onClick(View v) {
 
-                  /**
+                Intent toReturn = new Intent (DetailsNeighbour_activity.this, MyNeighbourRecyclerViewAdapter.class);
+                startActivity(toReturn);
+
+                /**
                         * retourne à la page précédente
                         */
             }
