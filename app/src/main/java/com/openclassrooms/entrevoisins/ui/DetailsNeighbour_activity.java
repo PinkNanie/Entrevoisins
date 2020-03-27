@@ -22,15 +22,11 @@ import com.openclassrooms.entrevoisins.ui.neighbour_list.MyNeighbourRecyclerView
 
 import butterknife.BindView;
 
+import static com.openclassrooms.entrevoisins.R.layout.activity_details_neighbour;
 
 
 public class DetailsNeighbour_activity extends AppCompatActivity implements View.OnClickListener {
 
-
-
-
-
-    ListNeighbourActivity mListNeighbouractivity;
     Neighbour mNeighbour;
     NeighbourApiService mApiService;
 
@@ -47,21 +43,24 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
     @BindView(R.id.biography)
     TextView mBiography;
 
+   /**private Neighbour neighbour ;
+    {
+        this.mFirstname.setText(mNeighbour.getName());
+        this.mProfilePicture.( Trouver une méthode renvoyant l'image de l'url mNeighbour.getAvatarUrl());
+        this.mInfos.setText(mNeighbour.getAddress());
+        this.mBiography.setText(mNeighbour.getAboutMe());
+    }*/
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(activity_details_neighbour);
     }
 
     @Override
     public void onClick(View v) {
-        mReturnBtn.setEnabled(true);
+
         mFavoriteBtn.setEnabled(true);
-
-
-
-
 
         mFavoriteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +69,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
             }
         });
 
+        mReturnBtn.setEnabled(true);
 
         mReturnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
