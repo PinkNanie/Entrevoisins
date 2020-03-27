@@ -16,11 +16,12 @@ import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
-import com.openclassrooms.entrevoisins.ui.neighbour_list.DetailsNeighbour_activity;
+import com.openclassrooms.entrevoisins.ui.DetailsNeighbour_activity;
+
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.util.HashMap;
+
 import java.util.List;
 
 import butterknife.BindView;

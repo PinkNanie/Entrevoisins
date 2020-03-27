@@ -1,8 +1,9 @@
-package com.openclassrooms.entrevoisins.ui.neighbour_list;
+package com.openclassrooms.entrevoisins.ui;
 
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,17 +15,20 @@ import android.widget.TextView;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
+import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
+
 
 import butterknife.BindView;
+
+
 
 public class DetailsNeighbour_activity extends AppCompatActivity implements View.OnClickListener {
 
 
-    /** private OnButtonClickedListener mCallback;*/
+
 
 
     ListNeighbourActivity mListNeighbouractivity;
-    FavListFragment mFavListFragment;
     Neighbour mNeighbour;
     NeighbourApiService mApiService;
 
@@ -41,33 +45,19 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
     @BindView(R.id.biography)
     TextView mBiography;
 
-    /**public interface onButtonClickedListener{
-         void onButtonClicked (View view);
-    }
 
-    protected View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View result = inflater.inflate(R.layout.activity_details_neighbour, container, false);
-
-        result.findViewById(R.id.detailsNeighbour_btn).setOnClickListener(this);
-
-        return result;
-    }*/
-
-    /**
     @Override
-    public  void onAttach(Context context){
-        super.onAttach(context);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        this.createCallbacktoparentActivity();
-    }*/
+    }
 
     @Override
     public void onClick(View v) {
         mReturnBtn.setEnabled(true);
         mFavoriteBtn.setEnabled(true);
 
-       /** mCallback.onButtonClicked(v); */
+
 
 
 
@@ -82,7 +72,8 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
         mReturnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                return ; /**
+
+                  /**
                         * retourne à la page précédente
                         */
             }
@@ -90,11 +81,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
 
     }
 
-    /**private void createCallbacktoparentActivity(){
-        try {
-            mCallback = (onButtonClickedListener) getCallingActivity();
-        } catch (ClassCastException e){
-            throw new ClassCastException(e.toString()+"must implement OnButtonClickedListener");
-        }
-    }*/
 }
+
+
+
