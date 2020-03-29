@@ -1,26 +1,30 @@
 package com.openclassrooms.entrevoisins.ui;
 
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
-import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.MyNeighbourRecyclerViewAdapter;
 
 
+import java.util.Objects;
+
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import static com.openclassrooms.entrevoisins.R.layout.activity_details_neighbour;
 
@@ -31,58 +35,58 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
     NeighbourApiService mApiService;
 
     @BindView(R.id.profile_picture)
-    ImageView mProfilePicture;
+    public ImageView mProfilePicture;
     @BindView(R.id.return_btn)
-    ImageButton mReturnBtn;
+    public ImageButton mReturnBtn;
     @BindView(R.id.firstname)
-    TextView mFirstname;
+    public TextView mFirstname;
     @BindView(R.id.favorite_btn)
-    ImageButton mFavoriteBtn;
+    public ImageButton mFavoriteBtn;
     @BindView(R.id.infos)
-    TextView mInfos;
+    public TextView mInfos;
     @BindView(R.id.biography)
-    TextView mBiography;
+    public TextView mBiography;
+    private String Infos = mNeighbour.getAddress() + mNeighbour.getPhoneNumber();
 
-   /**private Neighbour neighbour ;
-    {
-        this.mFirstname.setText(mNeighbour.getName());
-        this.mProfilePicture.( Trouver une méthode renvoyant l'image de l'url mNeighbour.getAvatarUrl());
-        this.mInfos.setText(mNeighbour.getAddress());
-        this.mBiography.setText(mNeighbour.getAboutMe());
-    }*/
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_details_neighbour);
+        ButterKnife.bind(this);
+        getActionBar().hide();
+
+
+        showDetails();
     }
+
+
+        private void showDetails() {
+
+
+            Glide.with(this).load(mNeighbour.getAvatarUrl()).into(mProfilePicture);
+            mFirstname.setText(mNeighbour.getName());
+            mInfos.setText(Infos);
+            mBiography.setText(mNeighbour.getAboutMe());
+
+            mReturnBtn.setOnClickListener(v -> finish());
+        }
+
 
     @Override
     public void onClick(View v) {
 
-        mFavoriteBtn.setEnabled(true);
+               mFavoriteBtn.setOnClickListener(view -> {
 
-        mFavoriteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                mApiService.reverseNeighbour(mNeighbour);
-            }
+                   mNeighbour.setFavorite(!mNeighbour.isFavorite());
+                   mApiService.reverseNeighbour(mNeighbour);
+
+
         });
 
-        mReturnBtn.setEnabled(true);
 
-        mReturnBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent toReturn = new Intent (DetailsNeighbour_activity.this, MyNeighbourRecyclerViewAdapter.class);
-                startActivity(toReturn);
-
-                /**
-                        * retourne à la page précédente
-                        */
-            }
-        });
 
     }
 
