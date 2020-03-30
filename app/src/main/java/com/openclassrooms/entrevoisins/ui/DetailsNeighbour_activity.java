@@ -29,7 +29,7 @@ import butterknife.ButterKnife;
 import static com.openclassrooms.entrevoisins.R.layout.activity_details_neighbour;
 
 
-public class DetailsNeighbour_activity extends AppCompatActivity implements View.OnClickListener {
+public class DetailsNeighbour_activity extends AppCompatActivity  {
 
     Neighbour mNeighbour;
     NeighbourApiService mApiService;
@@ -46,7 +46,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
     public TextView mInfos;
     @BindView(R.id.biography)
     public TextView mBiography;
-    private String Infos = mNeighbour.getAddress() + mNeighbour.getPhoneNumber();
+
 
 
 
@@ -59,15 +59,26 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
         getActionBar().hide();
 
 
+        getNeighbour();
         showDetails();
+        favorite_btn();
+
     }
+
+
+
+    private void getNeighbour() {
+            mNeighbour = getIntent().getParcelableExtra("neighbour");
+        }
 
 
         private void showDetails() {
 
-
             Glide.with(this).load(mNeighbour.getAvatarUrl()).into(mProfilePicture);
             mFirstname.setText(mNeighbour.getName());
+            String Address = mNeighbour.getAddress();
+            String PhoneNumber = mNeighbour.getPhoneNumber();
+            String Infos = Address + PhoneNumber ;
             mInfos.setText(Infos);
             mBiography.setText(mNeighbour.getAboutMe());
 
@@ -75,10 +86,9 @@ public class DetailsNeighbour_activity extends AppCompatActivity implements View
         }
 
 
-    @Override
-    public void onClick(View v) {
+        private void favorite_btn(){
 
-               mFavoriteBtn.setOnClickListener(view -> {
+               mFavoriteBtn.setOnClickListener(v -> {
 
                    mNeighbour.setFavorite(!mNeighbour.isFavorite());
                    mApiService.reverseNeighbour(mNeighbour);

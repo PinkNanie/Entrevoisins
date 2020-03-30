@@ -1,5 +1,6 @@
 package com.openclassrooms.entrevoisins.model;
 
+import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -158,4 +159,5 @@ public class Neighbour implements Parcelable {
         dest.writeString(aboutMe);
         dest.writeByte((byte) (isFavorite ? 1 : 0));
     }
+
 }
