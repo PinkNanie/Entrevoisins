@@ -76,9 +76,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
 
             Glide.with(this).load(mNeighbour.getAvatarUrl()).into(mProfilePicture);
             mFirstname.setText(mNeighbour.getName());
-            String Address = mNeighbour.getAddress();
-            String PhoneNumber = mNeighbour.getPhoneNumber();
-            String Infos = Address + PhoneNumber ;
+            String Infos = mNeighbour.getAddress() + "\n" + mNeighbour.getPhoneNumber();
             mInfos.setText(Infos);
             mBiography.setText(mNeighbour.getAboutMe());
 
