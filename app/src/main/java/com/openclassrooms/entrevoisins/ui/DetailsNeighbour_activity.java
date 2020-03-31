@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.MyNeighbourRecyclerViewAdapter;
@@ -54,10 +55,11 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(activity_details_neighbour);
         ButterKnife.bind(this);
-        getActionBar().hide();
 
+        mApiService = DI.getNeighbourApiService();
 
         getNeighbour();
         showDetails();
@@ -76,7 +78,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
 
             Glide.with(this).load(mNeighbour.getAvatarUrl()).into(mProfilePicture);
             mFirstname.setText(mNeighbour.getName());
-            String Infos = mNeighbour.getAddress() + "\n" + mNeighbour.getPhoneNumber();
+            String Infos ="\n" + "\n" + mNeighbour.getAddress() + "\n" + "\n" + mNeighbour.getPhoneNumber();
             mInfos.setText(Infos);
             mBiography.setText(mNeighbour.getAboutMe());
 
@@ -88,9 +90,9 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
 
                mFavoriteBtn.setOnClickListener(v -> {
 
-                   mNeighbour.setFavorite(!mNeighbour.isFavorite());
                    mApiService.reverseNeighbour(mNeighbour);
 
+                   mNeighbour.setFavorite(!mNeighbour.isFavorite());
 
         });
 
