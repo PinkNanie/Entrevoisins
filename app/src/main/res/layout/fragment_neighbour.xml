@@ -41,10 +41,11 @@
 
     <Button
         android:id="@+id/detailsNeighbour_btn"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
+        android:focusable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

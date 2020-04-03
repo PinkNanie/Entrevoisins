@@ -36,9 +36,15 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
     public TextView mFirstname;
     @BindView(R.id.favorite_btn)
     public ImageButton mFavoriteBtn;
-    @BindView(R.id.infos)
-    public TextView mInfos;
-    @BindView(R.id.biography)
+    @BindView(R.id.infos_card_name)
+    public TextView mCardName;
+    @BindView(R.id.address)
+    public TextView mAdress;
+    @BindView(R.id.phoneNumber)
+    public TextView mPhoneNumber;
+    @BindView(R.id.web)
+    public TextView mWebpage;
+    @BindView(R.id.aboutMe)
     public TextView mBiography;
 
 
@@ -71,8 +77,13 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
 
             Glide.with(this).load(mNeighbour.getAvatarUrl()).into(mProfilePicture);
             mFirstname.setText(mNeighbour.getName());
-            String Infos ="\n" + "\n" + mNeighbour.getAddress() + "\n" + "\n" + mNeighbour.getPhoneNumber();
-            mInfos.setText(Infos);
+
+            mCardName.setText(mNeighbour.getName());
+            mAdress.setText(mNeighbour.getAddress());
+            mPhoneNumber.setText(mNeighbour.getPhoneNumber());
+            String webpage = "www.facebook.fr/" + mNeighbour.getName();
+            mWebpage.setText(webpage);
+
             mBiography.setText(mNeighbour.getAboutMe());
 
             mReturnBtn.setOnClickListener(v -> finish());

@@ -62,7 +62,9 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         });
 
 
+            holder.mDetailsNeighbour_btn.setCursorVisible(false);
           holder.mDetailsNeighbour_btn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Intent toDetail = new Intent(holder.mNeighbourName.getContext(), DetailsNeighbour_activity.class);
@@ -89,6 +91,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         public ImageButton mDeleteButton;
         @BindView(R.id.detailsNeighbour_btn)
         public Button mDetailsNeighbour_btn;
+
 
 
 
