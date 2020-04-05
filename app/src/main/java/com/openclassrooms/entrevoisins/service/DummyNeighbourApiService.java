@@ -60,8 +60,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
     @Override
     public void reverseNeighbour(Neighbour neighbour) {
 
-        neighbours.get(neighbours.indexOf(neighbour));
-        neighbour.reverseFavorite();
+        neighbours.get(neighbours.indexOf(neighbour)).reverseFavorite();
     }
 
 
