@@ -44,25 +44,18 @@ public class NeighbourServiceTest {
 
     @Test
     public void reverseFavoriteWithSuccess() {
-        /**
-         *  take first neighbour of Neighbour, who !isFavorite.
-         */
+        
+        // take first neighbour of Neighbour, who !isFavorite.
         Neighbour neighbour = service.getNeighbours().get(0);
 
-        /**
-         * it's False, neighbour = !isFavorite.
-         */
+        // it's False, neighbour = !isFavorite.
         assertFalse(service.getNeighbours().get(0).isFavorite());
 
-        /**
-         * Doing neighbour's Favorite.
-         */
-        service.reverseNeighbour(neighbour);
+        // Doing neighbour's Favorite.
+         service.reverseNeighbour(neighbour);
 
-        /**
-         * it's correct neighbour = isFavorite.
-         */
-        assertTrue(service.getNeighbours().get(0).isFavorite());
+        // it's correct neighbour = isFavorite.
+         assertTrue(service.getNeighbours().get(0).isFavorite());
 
     }
 }
