@@ -44,7 +44,7 @@ public class NeighbourServiceTest {
 
     @Test
     public void reverseFavoriteWithSuccess() {
-        
+
         // take first neighbour of Neighbour, who !isFavorite.
         Neighbour neighbour = service.getNeighbours().get(0);
 
