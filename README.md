@@ -34,10 +34,10 @@ UX Designer:
 ## ELEMENTS TECHNIQUES
 
 ## API 
-Target SDK version:
+Target SDK version : 
  28 (API 28: Android 9.0 (Pie))
 
-Min SDK version 
+Min SDK version :  
  21
 
 ## Execution et écriture des tests
