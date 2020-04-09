@@ -44,16 +44,16 @@ Min SDK version :
 android.support.test.runner.AndroidJUnitRunner
 
 ## Fonctionnalités
- 1. lister mes voisins ;
- 2. ajouter un voisin ;
- 3. suppression d’un voisin.
- 4. Affichage des détails d'un voisin;
- 5. Ajouter un voisin à la liste des favoris;
+ 1. lister mes voisins 
+ 2. ajouter un voisin 
+ 3. suppression d’un voisin
+ 4. Affichage des détails d'un voisin
+ 5. Ajouter un voisin à la liste des favoris
 
 ## Technologies utilisées
- * Fragment;
- * RecyclerView;
- * Parcelable;
+ * Fragment
+ * RecyclerView
+ * Parcelable
 
 ## Crédits
  - https://openclassrooms.com/fr/courses/4517166-developpez-votre-premiere-application-android
@@ -63,5 +63,5 @@ android.support.test.runner.AndroidJUnitRunner
 
 ## Remerciements
 
-* Grégoire Cattan ( Mentor OpenClassrooms);
+* Grégoire Cattan ( Mentor OpenClassrooms)
 * La communauté DA Développeur Android sur Discord et Workplace.
