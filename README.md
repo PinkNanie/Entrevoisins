@@ -44,24 +44,24 @@ Min SDK version
 android.support.test.runner.AndroidJUnitRunner
 
 # Fonctionnalités
- lister mes voisins ;
- ajouter un voisin ;
- suppression d’un voisin.
- Affichage des détails d'un voisin;
- Ajouter un voisin à la liste des favoris;
+ 1. lister mes voisins ;
+ 2. ajouter un voisin ;
+ 3. suppression d’un voisin.
+ 4. Affichage des détails d'un voisin;
+ 5. Ajouter un voisin à la liste des favoris;
 
 # Technologies utilisées
- Fragment;
- RecyclerView;
- Parcelable;
+ * Fragment;
+ * RecyclerView;
+ * Parcelable;
 
 # Crédits
- https://openclassrooms.com/fr/courses/4517166-developpez-votre-premiere-application-android
- https://openclassrooms.com/fr/courses/4568526-developpez-des-applications-robustes-et-fiables
- https://openclassrooms.com/fr/courses/4568596-construisez-une-interface-utilisateur-flexible-et-adaptative/4568603-comprenez-les-differents-moyens-de-naviguer-sur-une-application
- https://developer.android.com/
+ - https://openclassrooms.com/fr/courses/4517166-developpez-votre-premiere-application-android
+ - https://openclassrooms.com/fr/courses/4568526-developpez-des-applications-robustes-et-fiables
+ - https://openclassrooms.com/fr/courses/4568596-construisez-une-interface-utilisateur-flexible-et-adaptative/4568603-comprenez-les-differents-moyens-de-naviguer-sur-une-application
+ - https://developer.android.com/
 
 # Remerciements
 
-Grégoire Cattan ( Mentor OpenClassrooms);
-La communauté DA Développeur Android sur Discord et Workplace.
+* Grégoire Cattan ( Mentor OpenClassrooms);
+* La communauté DA Développeur Android sur Discord et Workplace.
