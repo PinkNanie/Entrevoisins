@@ -63,5 +63,5 @@ android.support.test.runner.AndroidJUnitRunner
 
 # Remerciements
 
-Grégoire Cattan ( Mentor OpenClassrooms)
+Grégoire Cattan ( Mentor OpenClassrooms);
 La communauté DA Développeur Android sur Discord et Workplace.
