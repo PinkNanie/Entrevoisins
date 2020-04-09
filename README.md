@@ -12,19 +12,19 @@ Entrevoisins
 
 Application développée avec AndroidStudio
 
-Langage utilisé:
+Langage utilisé :
 Java
 
 ## Auteurs 
 
-Stratup:
- Entrevoisins
+Stratup :  
+Entrevoisins
 
-CTO:
- Claire Parlo
+CTO :  
+Claire Parlo
 
-Développeur:
- POUVRASSEAU Nathalie
+Développeur :  
+POUVRASSEAU Nathalie
 
 ## Autre partie prenante
 
