@@ -12,7 +12,7 @@ Entrevoisins
 
 Application développée avec AndroidStudio
 
-Langage utilisé :
+Langage utilisé :  
 Java
 
 ## Auteurs 
@@ -28,17 +28,17 @@ POUVRASSEAU Nathalie
 
 ## Autre partie prenante
 
-UX Designer:
- Charline, freelance.
+UX Designer :  
+Charline, freelance.
 
 ## ELEMENTS TECHNIQUES
 
 ## API 
-Target SDK version : 
- 28 (API 28: Android 9.0 (Pie))
+Target SDK version :  
+28 (API 28: Android 9.0 (Pie))
 
 Min SDK version :  
- 21
+21
 
 ## Execution et écriture des tests
 android.support.test.runner.AndroidJUnitRunner
