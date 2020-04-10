@@ -3,7 +3,6 @@ package com.openclassrooms.entrevoisins.ui.neighbour_list;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -35,16 +34,11 @@ public class FavListFragment extends Fragment {
     private NeighbourApiService mApiService;
 
 
-
-
     public FavListFragment() {
         // Required empty public constructor
-
-
     }
 
 
-    // TODO: Rename and change types and number of parameters
     public static FavListFragment newInstance() {
         FavListFragment fragment = new FavListFragment();
         return fragment;

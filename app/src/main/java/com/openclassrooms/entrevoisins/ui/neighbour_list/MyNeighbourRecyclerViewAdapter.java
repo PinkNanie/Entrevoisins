@@ -62,7 +62,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         });
 
 
-           
+
           holder.mDetailsNeighbour_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
