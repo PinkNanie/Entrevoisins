@@ -89,7 +89,7 @@ public class NeighboursListTest {
      */
 
     @Test
-    public void detailsNeighbour_Firstname() {
+    public void detailsNeighbour_firstname() {
         ViewInteraction materialButton = onView(
                 allOf(withId(R.id.detailsNeighbour_btn),
                         childAtPosition(
@@ -112,12 +112,13 @@ public class NeighboursListTest {
         textView.check(matches(isDisplayed()));
     }
 
+
     /**
      * Favorite's Tab, show Favorite List
      */
 
     @Test
-    public void myFavoriteListTest() {
+    public void favoriteList_shouldContainsOnlyFavoriteNeighbours() {
         ViewInteraction materialButton = onView(
                 allOf(withId(R.id.detailsNeighbour_btn),
                         childAtPosition(

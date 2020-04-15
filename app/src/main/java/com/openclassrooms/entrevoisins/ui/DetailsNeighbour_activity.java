@@ -1,5 +1,6 @@
 package com.openclassrooms.entrevoisins.ui;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 import java.util.Objects;
 
+import butterknife.BindDrawable;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -46,7 +48,10 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
     public TextView mWebpage;
     @BindView(R.id.aboutMe)
     public TextView mBiography;
-
+    @BindDrawable(R.drawable.ic_star_orange_24dp)
+    public Drawable mStarOrange;
+    @BindDrawable(R.drawable.ic_star_black_24dp)
+    public Drawable mStarFav;
 
 
 
@@ -62,6 +67,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
 
         getNeighbour();
         showDetails();
+        favorite_btn_changeColor();
         favorite_btn();
 
     }
@@ -87,6 +93,20 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
             mBiography.setText(mNeighbour.getAboutMe());
 
             mReturnBtn.setOnClickListener(v -> finish());
+        }
+
+
+        private void favorite_btn_changeColor() {
+
+            if (mNeighbour.isFavorite()) {
+
+                mFavoriteBtn.setImageDrawable(mStarFav);
+
+            } else {
+
+                mFavoriteBtn.setImageDrawable(mStarOrange);
+
+            }
         }
 
 

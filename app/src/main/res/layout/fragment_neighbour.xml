@@ -44,7 +44,7 @@
     <Button
         android:id="@+id/detailsNeighbour_btn"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="match_parent"
         android:background="@null"
         android:backgroundTint="#00FFFFFF"
