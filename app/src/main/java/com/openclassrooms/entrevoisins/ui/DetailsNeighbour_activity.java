@@ -49,9 +49,9 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
     @BindView(R.id.aboutMe)
     public TextView mBiography;
     @BindDrawable(R.drawable.ic_star_orange_24dp)
-    public Drawable mStarOrange;
-    @BindDrawable(R.drawable.ic_star_black_24dp)
     public Drawable mStarFav;
+    @BindDrawable(R.drawable.ic_star_black_24dp)
+    public Drawable mStarDefault;
 
 
 
@@ -67,7 +67,6 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
 
         getNeighbour();
         showDetails();
-        favorite_btn_changeColor();
         favorite_btn();
 
     }
@@ -96,18 +95,7 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
         }
 
 
-        private void favorite_btn_changeColor() {
 
-            if (mNeighbour.isFavorite()) {
-
-                mFavoriteBtn.setImageDrawable(mStarFav);
-
-            } else {
-
-                mFavoriteBtn.setImageDrawable(mStarOrange);
-
-            }
-        }
 
 
         private void favorite_btn(){
@@ -117,6 +105,16 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
                    mApiService.reverseNeighbour(mNeighbour);
 
                    mNeighbour.setFavorite(!mNeighbour.isFavorite());
+
+                   if (mApiService.getNeighboursFavorite().contains(mNeighbour)) {
+
+                       mFavoriteBtn.setImageDrawable(mStarFav);
+
+                   } else {
+
+                       mFavoriteBtn.setImageDrawable(mStarDefault);
+
+                   }
 
         });
 
