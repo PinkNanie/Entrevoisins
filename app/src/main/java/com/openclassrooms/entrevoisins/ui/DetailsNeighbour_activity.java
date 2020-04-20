@@ -91,11 +91,12 @@ public class DetailsNeighbour_activity extends AppCompatActivity  {
 
             mBiography.setText(mNeighbour.getAboutMe());
 
+            if (mApiService.getNeighboursFavorite().contains(mNeighbour)) {
+
+                mFavoriteBtn.setImageDrawable(mStarFav);}
+
             mReturnBtn.setOnClickListener(v -> finish());
         }
-
-
-
 
 
         private void favorite_btn(){

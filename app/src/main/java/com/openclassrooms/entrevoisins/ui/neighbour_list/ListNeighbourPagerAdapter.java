@@ -1,5 +1,7 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
+import android.bluetooth.le.ScanSettings;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -23,14 +25,25 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        if (position == 0)
-        {
-            return NeighbourFragment.newInstance();
+        Fragment fm = null;
+        Bundle bundle;
+        switch (position){
+            case 0:
+
+                bundle = new Bundle();
+                bundle.putString("datas", "AllNeighbours");
+                fm = new NeighbourFragment();
+                fm.setArguments(bundle);
+                break;
+            case 1:
+
+                bundle = new Bundle();
+                bundle.putString("datas", "FavoriteNeighbour");
+                fm = new NeighbourFragment();
+                fm.setArguments(bundle);
+                break;
         }
-        else
-        {
-            return FavListFragment.newInstance();
-        }
+        return fm;
     }
 
     /**
