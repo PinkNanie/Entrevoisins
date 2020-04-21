@@ -39,13 +39,29 @@ public class ListNeighbourActivity extends AppCompatActivity {
         mPagerAdapter = new ListNeighbourPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                showButton(i);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
         mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-        showButton();
+
     }
 
-    public void showButton(){
+    public void showButton(int item){
 
-        if (mViewPager.getCurrentItem() == 0){
+        if (item == 0){
             mAdd_btn.show();
         } else {
             mAdd_btn.hide();
@@ -57,6 +73,5 @@ public class ListNeighbourActivity extends AppCompatActivity {
     void addNeighbour() {
         AddNeighbourActivity.navigate(this);
     }
-
 
 }
