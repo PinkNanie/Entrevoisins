@@ -60,7 +60,7 @@ public class NeighbourServiceTest {
     }
 
     @Test
-    public void deleteNeighbourFavoriteWithsuccess(){
+    public void deleteNeighbourFavoriteWithSuccess(){
 
         Neighbour neighbourToDelete = service.getNeighboursFavorite().get(0);
         service.deleteNeighbour(neighbourToDelete);
