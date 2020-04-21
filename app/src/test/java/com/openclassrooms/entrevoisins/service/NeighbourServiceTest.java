@@ -62,11 +62,16 @@ public class NeighbourServiceTest {
     @Test
     public void DeleteNeighbourFavoriteWithsuccess(){
 
-        //Asserts the Neighbour deleted is no longer in the list
         Neighbour neighbourToDelete = service.getNeighboursFavorite().get(0);
         service.deleteNeighbour(neighbourToDelete);
+
+        // it's False, Favorite's List does'nt contain neighbourToDelete
         assertFalse(service.getNeighboursFavorite().contains(neighbourToDelete));
+
+        // it's False, neighbourToDelete isn't contained in all Neighbour's List.
+        assertFalse(service.getNeighbours().contains(neighbourToDelete));
     }
+
 
 
 

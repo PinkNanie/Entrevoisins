@@ -34,12 +34,14 @@ public class NeighbourFragment extends Fragment {
     private String mDatas;
 
     private RecyclerView mRecyclerView;
-
+    @BindView(R.id.add_neighbour)
+    FloatingActionButton mAdd_btn;
 
     /**
      * Create and return a new instance
      * @return @{@link NeighbourFragment}
      */
+
     public static NeighbourFragment newInstance() {
         NeighbourFragment fragment = new NeighbourFragment();
         return fragment;
@@ -62,20 +64,28 @@ public class NeighbourFragment extends Fragment {
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         initList();
 
+        
+        if (mDatas.equals("Neighbours")){
+            mAdd_btn.show();
+        } else if (mDatas.equals("Favorites")){
+            mAdd_btn.hide();
+        }
+
         return view;
+
     }
 
     /**
      * Init the List of neighbours
      */
     private void initList() {
-        mNeighbours = mApiService.getNeighbours();
+
         List<Neighbour> mDispalyList = new ArrayList<>();
 
-        if (mDatas.equals("FavoriteNeighbour")){
+        if (mDatas.equals("Favorites")){
             mDispalyList = mApiService.getNeighboursFavorite();
         } else {
-            mDispalyList = mNeighbours;
+            mDispalyList = mApiService.getNeighbours();
         }
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mDispalyList));
     }

@@ -31,14 +31,15 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
             case 0:
 
                 bundle = new Bundle();
-                bundle.putString("datas", "AllNeighbours");
+                bundle.putString("datas", "Neighbours");
                 fm = new NeighbourFragment();
                 fm.setArguments(bundle);
                 break;
+
             case 1:
 
                 bundle = new Bundle();
-                bundle.putString("datas", "FavoriteNeighbour");
+                bundle.putString("datas", "Favorites");
                 fm = new NeighbourFragment();
                 fm.setArguments(bundle);
                 break;
