@@ -117,7 +117,7 @@ public class NeighboursListTest {
 
     /**
      * Favorite's Tab, show Favorite List
-
+     */
 
     @Test
     public void favoriteList_shouldContainsOnlyFavoriteNeighbours() {
@@ -173,15 +173,16 @@ public class NeighboursListTest {
                         isDisplayed()));
         viewPager.perform(swipeLeft());
 
-        ViewInteraction viewGroup = onView(
-                allOf(childAtPosition(
-                        allOf(withId(R.id.favList_neighbours),
-                                withParent(withId(R.id.container))),
-                        0),
+        ViewInteraction recyclerView = onView(
+                allOf(withId(R.id.list_neighbours),
+                        withParent(allOf(withId(R.id.container),
+                                childAtPosition(
+                                        withId(R.id.main_content),
+                                        1))),
                         isDisplayed()));
-        viewGroup.check(matches(isDisplayed()));
+        recyclerView.check(matches(isDisplayed()));
     }
-     */
+
 
     private static Matcher<View> childAtPosition(
             final Matcher<View> parentMatcher, final int position) {
