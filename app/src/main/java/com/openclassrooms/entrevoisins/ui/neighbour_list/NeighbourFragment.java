@@ -34,8 +34,6 @@ public class NeighbourFragment extends Fragment {
     private String mDatas;
 
     private RecyclerView mRecyclerView;
-    @BindView(R.id.add_neighbour)
-    public FloatingActionButton mAdd_btn;
 
 
     /**
@@ -66,8 +64,6 @@ public class NeighbourFragment extends Fragment {
 
         return view;
     }
-
-
 
     /**
      * Init the List of neighbours
