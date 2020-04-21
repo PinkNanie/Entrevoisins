@@ -64,13 +64,6 @@ public class NeighbourFragment extends Fragment {
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         initList();
 
-        
-        if (mDatas.equals("Neighbours")){
-            mAdd_btn.show();
-        } else if (mDatas.equals("Favorites")){
-            mAdd_btn.hide();
-        }
-
         return view;
 
     }
